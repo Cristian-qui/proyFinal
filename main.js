@@ -399,4 +399,6 @@ const productos = [
     material: "Algodón",
     categoria: "Camisetas",
   },
+  (document.getElementById("productos-container").innerText =
+    "Prueba de carga de JavaScrit"),
 ];
