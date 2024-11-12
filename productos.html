@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vista de Productos</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Vista de Productos</h1>
+    </header>
+
+    <div class="filters">
+      <select id="filter-category">
+        <option value="">Categoría</option>
+      </select>
+      <select id="filter-material">
+        <option value="">Material</option>
+      </select>
+      <button id="filter-button">Filtrar</button>
+      <button id="clear-filter-button">Limpiar Filtros</button>
+    </div>
+
+    <div class="product-view">
+      <section id="product-list" class="product-list"></section>
+
+      <aside class="product-details" id="product-details">
+        <h2>Detalles del Producto</h2>
+        <div id="selected-product-info">
+          <p>Seleccione un producto para ver sus detalles.</p>
+        </div>
+        <div id="cantidad-container" style="display: none; margin-top: 10px">
+          <label for="cantidad">Cantidad:</label>
+          <input
+            type="number"
+            id="cantidad"
+            min="1"
+            value="1"
+            style="width: 100%; padding: 8px"
+          />
+        </div>
+        <button id="add-to-cart-button" style="display: none">
+          Agregar al Carrito
+        </button>
+      </aside>
+    </div>
+
+    <footer class="navigation-bar">
+      <button id="cancel-button">Cancelar Compra</button>
+      <button id="complete-button">Completar Compra</button>
+    </footer>
+
+    <!-- Asegúrate de cargar data.js antes de productos.js -->
+    <script src="data.js"></script>
+    <script src="productos.js"></script>
+  </body>
+</html>

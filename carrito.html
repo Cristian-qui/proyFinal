@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carrito de Compras</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Carrito de Compras</h1>
+    </header>
+
+    <section>
+      <table id="carrito-table">
+        <thead>
+          <tr>
+            <th>Producto</th>
+            <th>Cantidad</th>
+            <th>Precio Unitario</th>
+            <th>Total</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Productos del carrito se agregarán dinámicamente aquí -->
+        </tbody>
+      </table>
+      <p id="total-message">
+        Costo total de la compra: <span id="total-compra">0</span>
+      </p>
+      <label>
+        <input
+          type="checkbox"
+          id="domicilio-checkbox"
+          onchange="toggleDomicilio()"
+        />
+        Incluir costo de domicilio (+$15,000)
+      </label>
+      <p id="domicilio-message" style="display: none">
+        Costo total con domicilio: <span id="total-con-domicilio">0</span>
+      </p>
+    </section>
+
+    <section id="form-section">
+      <h2>Información de Pago</h2>
+      <form id="pago-form">
+        <label for="card-number">Número de Tarjeta:</label>
+        <input type="text" id="card-number" maxlength="16" required />
+
+        <label for="expiration">Fecha de Expiración (MM/AA):</label>
+        <input
+          type="text"
+          id="expiration"
+          maxlength="5"
+          placeholder="MM/AA"
+          required
+        />
+
+        <label for="security-code">Código de Seguridad:</label>
+        <input type="password" id="security-code" maxlength="3" required />
+        <button type="button" onclick="toggleSecurityCodeVisibility()"></button>
+
+        <label for="card-holder">Nombre del Titular:</label>
+        <input type="text" id="card-holder" required />
+
+        <label for="country">País de Emisión:</label>
+        <select id="country" required>
+          <option value="">Selecciona un país</option>
+          <option value="Colombia">Colombia</option>
+          <option value="Panama">Panama</option>
+          <option value="Venezuela">Venezuela</option>
+          <option value="Brasil">Brasil</option>
+          <option value="Ecuador">Ecuador</option>
+          <option value="Peru">Peru</option>
+          <option value="Estados Unidos">Estados Unidos</option>
+          <option value="Argentina">Argentina</option>
+          <option value="España">España</option>
+          <option value="Canada">Canada</option>
+        </select>
+
+        <label for="card-type">Tipo de Tarjeta:</label>
+        <select id="card-type" required>
+          <option value="">Selecciona un tipo</option>
+          <option value="Mastercard">Mastercard</option>
+          <option value="Visa">Visa</option>
+          <option value="Prepagada">Prepagada</option>
+        </select>
+
+        <button type="button" onclick="limpiarCampos()">Limpiar Campos</button>
+        <button type="button" id="confirmar-compra" onclick="confirmarCompra()">
+          Confirmar Compra
+        </button>
+      </form>
+    </section>
+
+    <script src="carrito.js"></script>
+  </body>
+</html>

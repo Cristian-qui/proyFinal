@@ -3,10 +3,62 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tienda de Ropa</title>
+    <title>Requerimientos de Compra</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div id="productos-container"></div>
+    <header>
+      <h1>Requerimientos de Compra</h1>
+    </header>
+
+    <div class="purchase-requirements">
+      <input
+        type="text"
+        id="nombre"
+        placeholder="Nombre del Comprador"
+        maxlength="20"
+        required
+      />
+      <input
+        type="text"
+        id="presupuesto"
+        placeholder="Presupuesto (COP)"
+        required
+      />
+      <input
+        type="number"
+        id="cantidad"
+        placeholder="Cantidad de Productos (máximo 20)"
+        min="1"
+        max="20"
+        required
+      />
+      <input
+        type="text"
+        id="direccion"
+        placeholder="Dirección de Entrega"
+        required
+      />
+
+      <label>Tipo de Entrega:</label>
+      <div class="delivery-options">
+        <label>
+          <input type="radio" name="entrega" value="domicilio" />
+          Domicilio
+        </label>
+        <label>
+          <input type="radio" name="entrega" value="retiro" />
+          Retiro en Tienda
+        </label>
+      </div>
+
+      <div class="buttons">
+        <button id="iniciar-compra">Iniciar Compra</button>
+        <button id="limpiar-campos">Limpiar Campos</button>
+      </div>
+
+      <p id="error-message" style="color: red; display: none"></p>
+    </div>
 
     <script src="main.js"></script>
   </body>

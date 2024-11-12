@@ -1,2 +1,0 @@
-# proyFinal
-Created with CodeSandbox
