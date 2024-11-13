@@ -10,7 +10,7 @@ let loadedProducts = 0;
 const productsPerPage = 15;
 let filteredProducts = [...productos];
 let selectedProduct = null;
-let carrito = JSON.parse(localStorage.getItem("carrito")) || []; // Cargar carrito de localStorage o inicializar vacío
+let carrito = JSON.parse(localStorage.getItem("carrito")) || []; 
 
 // Función para llenar las opciones de filtros dinámicamente
 function fillFilters() {
@@ -139,13 +139,11 @@ function goToCart() {
   window.location.href = "carrito.html"; // Redirigir a carrito.html
 }
 
-// Asignar la función addToCart al botón de agregar al carrito
 buyButton.addEventListener("click", addToCart);
 
-// Asignar la función goToCart a los botones de cancelar y completar compra
+
 cancelButton.addEventListener("click", goToCart);
 completeButton.addEventListener("click", goToCart);
 
-// Inicializar la vista de productos, filtros y scroll infinito
 fillFilters();
 loadProducts();

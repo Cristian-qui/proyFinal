@@ -106,5 +106,5 @@ function toggleSecurityCodeVisibility() {
     securityCodeInput.type === "password" ? "text" : "password";
 }
 
-// Inicializar la vista del carrito
+
 mostrarCarrito();
